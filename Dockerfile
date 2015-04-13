@@ -2,7 +2,7 @@ FROM gregory90/base:latest
 
 ENV NGINX_VERSION 1.7.12-1~wheezy
 
-RUN apt-key adv --keyserver pgp.mit.edu --recv-keys 573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62
+RUN wget http://nginx.org/keys/nginx_signing.key && apt-key add nginx_signing.key
 RUN echo "deb http://nginx.org/packages/mainline/debian/ wheezy nginx" >> /etc/apt/sources.list
 
 RUN apt-get update && apt-get install -y nginx=${NGINX_VERSION} && rm -rf /var/lib/apt/lists/*
