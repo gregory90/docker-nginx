@@ -1,6 +1,6 @@
 FROM gregory90/base:latest
 
-ENV NGINX_VERSION 1.7.12-1~jessie
+ENV NGINX_VERSION 1.9.1-1~jessie
 
 RUN wget http://nginx.org/keys/nginx_signing.key && apt-key add nginx_signing.key
 RUN echo "deb http://nginx.org/packages/mainline/debian/ jessie nginx" >> /etc/apt/sources.list
